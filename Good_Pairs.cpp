@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define ll long long
+
 #define fr(i, a, b) for (int i = a; i < b; i++)
 using namespace std;
 int main()
@@ -18,11 +18,11 @@ int main()
         {
             cin >> e[i];
         }
-        for (int i = 0; i < a; i++)
+        for (int i = 1; i <= a; i++)
         {
-            fr(j, 0, a)
+
             {
-                if (i < j && d[i] == e[j] && d[j] == e[i])
+                if (d[i] == e[a - i] && d[a - 1] == e[i])
                     ct++;
             }
         }

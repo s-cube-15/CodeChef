@@ -9,7 +9,7 @@ int main()
     while (t--)
     {
         cin >> a >> b >> c;
-        cout << min(abs(c - b + a), abs(a - b)) << endl;
+        cout << min(c - abs(b - a), abs(a - b)) << endl;
     }
 
     return 0;
