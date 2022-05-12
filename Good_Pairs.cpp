@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
-
+#define ll long long
 #define fr(i, a, b) for (int i = a; i < b; i++)
 using namespace std;
 int main()
 {
-    int t, a, b, c, ct = 0;
+    int t, a;
     cin >> t;
     while (t--)
     {
@@ -18,17 +18,15 @@ int main()
         {
             cin >> e[i];
         }
-        for (int i = 1; i <= a; i++)
+        map<pair<int, int>, int> mp;
+        ll ans = 0;
+        fr(i, 0, a)
         {
-
-            {
-                if (d[i] == e[a - i] && d[a - 1] == e[i])
-                    ct++;
-            }
+            ans = ans + mp[{d[i], e[i]}];
+            mp[{e[i], d[i]}]++;
         }
-        cout << ct << endl;
-        ct = 0;
+        cout << ans << endl;
+        
     }
-
     return 0;
 }
